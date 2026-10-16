@@ -76,4 +76,6 @@ The extension imports these host-provided modules, which are declared as `peerDe
 
 ## License
 
-No license has been specified yet.
+Ember is licensed under the [MIT License](LICENSE).
+
+Copyright (c) 2026 JonyPlo. The license permits use, modification, and redistribution, including commercially, provided the copyright and license notice are retained. The software is provided “as is”, without warranty.
