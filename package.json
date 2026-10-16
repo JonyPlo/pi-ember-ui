@@ -1,0 +1,38 @@
+{
+  "name": "pi-ember-ui",
+  "version": "1.0.0",
+  "description": "Ember theme and animated UI extension for Pi",
+  "keywords": [
+    "pi-package",
+    "pi-theme",
+    "pi-coding-agent",
+    "terminal-ui",
+    "tui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JonyPlo/pi-ember-ui.git"
+  },
+  "homepage": "https://github.com/JonyPlo/pi-ember-ui#readme",
+  "files": [
+    "extensions/ember-ui.ts",
+    "themes/ember.json",
+    "assets/",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/ember-ui.ts"
+    ],
+    "themes": [
+      "./themes/ember.json"
+    ],
+    "image": "https://raw.githubusercontent.com/JonyPlo/pi-ember-ui/main/assets/ember-preview.png",
+    "video": "https://raw.githubusercontent.com/JonyPlo/pi-ember-ui/main/assets/ember-intro.mp4"
+  }
+}
