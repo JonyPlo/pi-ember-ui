@@ -1,7 +1,8 @@
 {
   "name": "pi-ember-ui",
   "version": "1.0.0",
-  "description": "UI-only Pi theme and terminal interface extension with a Tetris-style startup animation, custom header/footer, context bar, and activity indicators. No tools, skills, prompts, or extra LLM context.",
+  "description": "A UI-only Ember theme and animated terminal interface for Pi, with no extra LLM calls or prompt injection.",
+  "license": "MIT",
   "keywords": [
     "pi-package",
     "pi-theme",
@@ -35,6 +36,5 @@
     ],
     "image": "https://raw.githubusercontent.com/JonyPlo/pi-ember-ui/main/assets/ember-preview.png",
     "video": "https://raw.githubusercontent.com/JonyPlo/pi-ember-ui/main/assets/ember-intro.mp4"
-  },
-  "license": "MIT"
+  }
 }
