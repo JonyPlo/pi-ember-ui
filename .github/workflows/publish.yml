@@ -1,0 +1,30 @@
+name: Publish to npm
+
+# Runs only when you push a version tag such as v0.1.1 (created by `npm version`).
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+  id-token: write # lets npm use Trusted Publishing (OIDC): no npm token stored in GitHub
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+
+      # Trusted Publishing needs a recent npm CLI (11.5.1 or newer).
+      - run: npm install -g npm@latest
+
+      - run: npm publish
+        # If you prefer a token instead of Trusted Publishing, add:
+        # env:
+        #   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
