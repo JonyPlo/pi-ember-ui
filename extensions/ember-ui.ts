@@ -2290,7 +2290,7 @@ function resetForSession(): void {
 // ---------------------------------------------------------------------------
 
 export default function emberUiExtension(api: ExtensionAPI): void {
-  api.on('session_start', async (_event, ctx) => {
+  api.on('session_start', async (event, ctx) => {
     S.ctx = ctx
 
     applyEmberThemeOnFirstRun(ctx)
@@ -2322,7 +2322,7 @@ export default function emberUiExtension(api: ExtensionAPI): void {
      */
     let introRan = false
 
-    if (!isAppleTerminalSession()) {
+    if (event.reason === 'startup' && !isAppleTerminalSession()) {
       // Hide the built-in Pi UI before the startup animation begins.
       // custom() replaces the editor, but not the header/footer.
       ctx.ui.setWorkingVisible(false)

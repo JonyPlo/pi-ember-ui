@@ -1,6 +1,6 @@
 {
   "name": "pi-ember-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A UI-only Ember theme and animated terminal interface for Pi, with no extra LLM calls or prompt injection.",
   "license": "MIT",
   "keywords": [
