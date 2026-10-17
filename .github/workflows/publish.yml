@@ -21,10 +21,9 @@ jobs:
           node-version: 24
           registry-url: https://registry.npmjs.org
 
-      # Trusted Publishing needs a recent npm CLI (11.5.1 or newer).
+      # Staged publishing needs npm CLI 11.15.0 or newer.
       - run: npm install -g npm@latest
 
-      - run: npm publish
-        # If you prefer a token instead of Trusted Publishing, add:
-        # env:
-        #   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # Uploads the package to npm's stage queue. It is NOT installable until you
+      # approve it (npmjs.com > package > Staged Packages > Approve, or `npm stage approve <id>`).
+      - run: npm stage publish
