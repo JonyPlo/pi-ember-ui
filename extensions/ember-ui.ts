@@ -851,6 +851,18 @@ function drawLogoAt(
 }
 
 // ---------------------------------------------------------------------------
+// Empty UI component — hides Pi's default header/footer during the intro
+// ---------------------------------------------------------------------------
+
+class EmberBlankComponent implements Component {
+  render(_width: number): string[] {
+    return []
+  }
+
+  invalidate(): void {}
+}
+
+// ---------------------------------------------------------------------------
 // Full-screen startup intro
 // ---------------------------------------------------------------------------
 
@@ -2311,6 +2323,13 @@ export default function emberUiExtension(api: ExtensionAPI): void {
     let introRan = false
 
     if (!isAppleTerminalSession()) {
+      // Hide the built-in Pi UI before the startup animation begins.
+      // custom() replaces the editor, but not the header/footer.
+      ctx.ui.setWorkingVisible(false)
+
+      ctx.ui.setHeader(() => new EmberBlankComponent())
+      ctx.ui.setFooter(() => new EmberBlankComponent())
+
       introRan = true
 
       await ctx.ui.custom<void>(
