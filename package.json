@@ -36,5 +36,8 @@
     ],
     "image": "https://raw.githubusercontent.com/JonyPlo/pi-ember-ui/main/assets/ember-preview.png",
     "video": "https://raw.githubusercontent.com/JonyPlo/pi-ember-ui/main/assets/ember-intro.mp4"
+  },
+  "scripts": {
+    "release": "npm version patch && git push --follow-tags && npm publish"
   }
 }
